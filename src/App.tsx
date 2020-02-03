@@ -23,7 +23,7 @@ interface CalcProps {
 }
 
 interface CalcState{
-  count?: number
+  count: number
 }
 export default class App extends React.Component <CalcProps, CalcState>{
 
@@ -33,6 +33,12 @@ export default class App extends React.Component <CalcProps, CalcState>{
       count: 0
      
     };
+    this.addToCount = this.addToCount.bind(this);
+  }
+
+  addToCount(e: any){
+    e.preventDefault();
+    this.setState({ count: this.state.count + 1});
   }
   
 
@@ -40,9 +46,8 @@ export default class App extends React.Component <CalcProps, CalcState>{
     return (
       <div>
         <p>
-          hi. This is the app
           <br/>
-          <button>{this.state.count}</button>
+          <button onClick= {this.addToCount}>{this.state.count}</button>
         </p>
       </div>
     )

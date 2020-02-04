@@ -110,11 +110,6 @@ export default class App extends React.Component <CalcProps, CalcState>{
             <br />
             <button onClick={this.divideNums}><i className="fas fa-divide"></i></button>
             <br />
-
-
-            <br />
-            {/* {this.state.count1} */}
-            <br />
           
         </div>
       )
@@ -133,9 +128,6 @@ export default class App extends React.Component <CalcProps, CalcState>{
             <button onClick={this.multiplyNums}><i className="fas fa-times"></i></button>
             <br />
             <button onClick={this.divideNums}><i className="fas fa-divide"></i></button>
-            
-            <br />
-            {/* {this.state.count2} */}
             <br />
             <button onClick={this.handleEnter}>Enter</button>
             <br />

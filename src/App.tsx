@@ -29,7 +29,7 @@ export default class App extends React.Component <CalcProps, CalcState>{
 
      
     };
-    this.resetApp = this.resetApp.bind(this);
+
     this.addNums = this.addNums.bind(this);
     this.subtractNums = this.subtractNums.bind(this);
     this.multiplyNums = this.multiplyNums.bind(this);
@@ -48,10 +48,7 @@ export default class App extends React.Component <CalcProps, CalcState>{
 
   }
 
-  resetApp(e:any){
-    e.preventDefault();
-    this.setState({count1: '0'})
-  }
+
   handleChange( e: any){    
     this.setState({ count1: e });
  
@@ -99,76 +96,51 @@ export default class App extends React.Component <CalcProps, CalcState>{
   render() {
     
     if (!this.state.add && !this.state.sub && !this.state.multi && !this.state.div){
-      debugger
+
       return (
         <div>
-          <p>
-            <button onClick={this.addNums}>Add</button>
-            <br />
-            <button onClick={this.subtractNums}>Subtract</button>
-            <br />
-            <button onClick={this.multiplyNums}>Multiply</button>
-            <br />
-            <button onClick={this.divideNums}>Divide</button>
-            <br />
-
-            <button onClick={this.resetApp}>Reset</button>
-            <br />
+          
             <input type='text' value={this.state.count1} onChange={e => this.handleChange(e.target.value)} />
-            {this.state.count1}
+            <br/>
+            <button onClick={this.addNums}><i className="fas fa-plus"></i></button>
             <br />
+            <button onClick={this.subtractNums}><i className="fas fa-minus"></i></button>
             <br />
-            {this.state.add + ' add'}
+            <button onClick={this.multiplyNums}><i className="fas fa-times"></i></button>
             <br />
-            {this.state.sub + ' sub'}
-            <br />
-            {this.state.multi + ' multi'}
-            <br />
-            {this.state.div + ' div'}
-            <br />
-            {this.state.count1}
-            <br />
-            {this.state.count2}
+            <button onClick={this.divideNums}><i className="fas fa-divide"></i></button>
             <br />
 
-          </p>
+
+            <br />
+            {/* {this.state.count1} */}
+            <br />
+          
         </div>
       )
     } else {
-      debugger
+
       return (
         <div>
-          <p>
-            <button onClick={this.addNums}>Add</button>
-            <br />
-            <button onClick={this.subtractNums}>Subtract</button>
-            <br />
-            <button onClick={this.multiplyNums}>Multiply</button>
-            <br />
-            <button onClick={this.divideNums}>Divide</button>
-            <br />
-
-            <button onClick={this.resetApp}>Reset</button>
-            <br />
+          
             <input type='text' value={this.state.count2} onChange={e => this.handleChange2(e.target.value)} />
-            {this.state.count2}
+            <br/>
+            <button onClick={this.addNums}><i className="fas fa-plus"></i></button>
+            
+            <br />
+            <button onClick={this.subtractNums}><i className="fas fa-minus"></i></button>
+            <br />
+            <button onClick={this.multiplyNums}><i className="fas fa-times"></i></button>
+            <br />
+            <button onClick={this.divideNums}><i className="fas fa-divide"></i></button>
+            
+            <br />
+            {/* {this.state.count2} */}
             <br />
             <button onClick={this.handleEnter}>Enter</button>
             <br />
-            {this.state.add + ' add'}
-            <br />
-            {this.state.sub + ' sub'}
-            <br />
-            {this.state.multi + ' multi'}
-            <br />
-            {this.state.div + ' div'}
-            <br />
-            {this.state.count1}
-            <br />
-            {this.state.count2}
-            <br />
 
-          </p>
+          
         </div>
       )
     }
